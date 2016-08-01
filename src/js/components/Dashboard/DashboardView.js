@@ -2,6 +2,8 @@ var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
 
+     className: 'dashboard',
+
     initialize: function (options) {
         this.user = options.user;
         this.listenTo(this.user, 'change', this.render);

@@ -6,6 +6,9 @@ var request = require('request');
 var api = require('../API/api')
 
 var SearchView = Backbone.View.extend({
+
+	 className: 'search',
+
 		events: {
 		'click .search-button': 'handleSearchClick',
 		'keyup :input': 'logKey'

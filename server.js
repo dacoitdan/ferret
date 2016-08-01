@@ -172,13 +172,24 @@ app.post('/users/:id/albums', function (req, res) {
         id: uuid(),
         albumId: req.body.albumId
     };
-    
-    db.get('users')
+
+    var albums = db.get('users')
         .find({ id: req.params.id })
-        .get('albums')
-        .push(album)
+        .get('albums');
+    
+    var existing = albums
+        .find({ albumId: album.albumId })
         .value();
 
+    if (existing) {
+        res.sendStatus(409);
+        return;
+    }
+
+    albums
+        .push(album)
+        .value();
+    
     res.json(album);
 });
 
