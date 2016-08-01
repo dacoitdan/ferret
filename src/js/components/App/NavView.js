@@ -2,9 +2,7 @@ var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
 
-    tagName: 'main',
-
-    className: 'app',
+    tagName: 'nav',
 
     initialize: function () {
         this.pageView = null;
@@ -15,13 +13,11 @@ module.exports = Backbone.View.extend({
     },
 
     template: function () {
-        return `<nav>
-            <button class="searchnavbutton" onclick="location.href='#/search';">Search</button>
+        return `
+            <button class="searchnavbutton" onclick="location.href='#/search';">Explore</button>
             <button class="dashnavbutton" onclick="location.href='/';">Profile</button>
-        </nav>`;
+            <button class="logoutbutton" onclick="location.href='#/logout';">Log Out</button>
+        `;
     },
 
-    goToSearch: function () {
-        this.li
-    }
 });

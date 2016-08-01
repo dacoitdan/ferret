@@ -4,7 +4,7 @@ var auth = require('./authController');
 
 module.exports = Backbone.View.extend({
 
-    className: 'login',
+    className: 'register',
 
     events: {
         'click .register-button': 'onRegisterClick'

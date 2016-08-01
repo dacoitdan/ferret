@@ -4,12 +4,14 @@ var AlbumModel = require('../Album/AlbumModel');
 
 var ResultView = Backbone.View.extend({
 
+	 className: 'result',
+
 	initialize: function(){
 		this.searchView = null;
 	},
 
 	events: {
-		'click .result': 'handleClick'
+		'click .like': 'handleClick'
 	},
 
 	render : function () {
@@ -22,7 +24,8 @@ var ResultView = Backbone.View.extend({
 
 	template: function (data) {
 		return `
-			<img src="${data.thumbnail}" class="result">
+			<img src="${data.thumbnail}" class="result-image">
+			<button class="like">Like</button>
 		`; 
 	},
 
