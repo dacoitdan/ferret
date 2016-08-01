@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": "1792620a-c683-4694-a97c-1bda6a010998",
+      "username": "admin",
+      "password": "admin",
+      "albums": [
+        {
+          "id": "9caef075-5087-4fe7-a8cd-64a7024502e1",
+          "albumId": 13933
+        }
+      ]
+    }
+  ]
+}
