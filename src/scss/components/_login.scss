@@ -1,0 +1,24 @@
+div.login {
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	justify-content: center; 
+	flex-basis: 40px; 
+	padding-top: 60px; 
+}
+
+button.login-button {
+	background-color: white; 
+	 border: 2px solid $color-burgundy;
+	 color: black; 
+	border-radius: 8px; 
+	padding: 10px 40px; 
+	margin-top: 10px; 
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button.login-button:hover {
+    background-color: $color-burgundy;
+    color: pink;
+}

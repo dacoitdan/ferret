@@ -1,0 +1,125 @@
+.nav-region {
+
+	background-color: $color-burgundy;  
+	height: 70px; 
+
+	 
+}
+
+nav {
+	display: flex; 
+	justify-content: flex-end; 
+	// flex-flow: row wrap; 
+	flex-direction: row;
+	margin-bottom: 10px; 
+
+}
+
+@media all and (max-width:800px) {
+		.nav {
+		justify-content: space-around; 
+	}
+}
+
+// @media all and (max-width:500px) {
+// 	.nav {
+// 		height: 400px; 
+// 		justify-content: space-around; 
+// 		flex-direction: row; 
+// 		align-items: flex-start; 
+// 	}
+// }
+
+button {
+	border-style: none; 
+	background-color: transparent; 
+	font-family: Proxima Nova; 
+	color: white; 
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-position: -10px -70px; 
+    font-size: 16px; 
+
+}
+
+nav button, button.searchnavbutton {
+	position: relative;
+}
+
+nav button:before, button.searchnavbutton:before {
+	width: 5em;
+	height: 5em;
+	background-image: url("../../images/vinyl-01.png"); 
+	background-size: 5em;
+	background-repeat: no-repeat; 
+	content: '';
+	position: absolute;
+	top: -100%;
+	left: 15%; 
+	transition: top 200ms ease;
+
+}
+
+nav button:hover:before, button.searchnavbutton:hover:before {
+	top: -55%;
+	// background-position: 0px -40px;  
+	// color: pink;
+	// font-size: 16px;
+}
+
+button.searchnavbutton {
+	order: 2; 
+	background-image: url("../../images/search-01.png"); 
+	background-size: 2.1em;
+	background-position: 10px 20px; 
+	background-color: transparent; 
+	background-repeat: no-repeat; 
+	height: 75px; 
+	width:130px; 
+	margin:0; 
+	
+	border: none; 
+	padding-left: 16px; 
+
+
+}
+
+button.dashnavbutton {
+	order: 3; 
+	background-image: url("../../images/profileicon-01.png"); 
+	background-size: 2.1em;
+	background-position: 15px 20px; 
+	background-color: transparent; 
+	background-repeat: no-repeat; 
+	height: 75px; 
+	width:130px; 
+	margin:0; 
+
+	
+	border: none; 
+	padding-left: 16px; 
+}
+button.logoutbutton {
+	order: 4; 
+}
+
+div.logo {
+	background-image: url("../../images/ferretdashboard-01.png");
+	background-size: 5em; 
+	background-repeat: no-repeat; 
+	position: fixed; 
+	left: 10px; 
+	top: 0px; 
+	height: 70px;
+	font-family: Miniver; 
+	text-align: center; 
+	color: transparent; 
+}
+
+div.logo:hover {
+	color: white; 
+	text-indent: 80px; 
+	text-transform: lowercase; 
+// 	line-height: 20px; 
+// 	font-size: 20px; 
+}
