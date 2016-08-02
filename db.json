@@ -1,13 +1,25 @@
 {
   "users": [
     {
-      "id": "25550180-98f7-4000-994f-9b058752b16f",
+      "id": "8b8f824b-1cfd-44bd-af05-dcb5a1779137",
       "username": "admin",
       "password": "admin",
       "albums": [
         {
-          "id": "311ea153-c647-41b5-9313-2fad14c367bf",
-          "albumId": 13814
+          "id": "6857e48d-34f5-49e9-a9b4-bc664f887b35",
+          "albumId": 4330457
+        },
+        {
+          "id": "c73c46b2-707f-453d-9450-7370df638333",
+          "albumId": 640394
+        },
+        {
+          "id": "bee0bf14-f770-4ed5-8110-9835a9d00e9e",
+          "albumId": 377464
+        },
+        {
+          "id": "7cfe813d-4933-4a52-83a2-2dde64f84162",
+          "albumId": 3294598
         }
       ]
     }

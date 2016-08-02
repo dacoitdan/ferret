@@ -25,6 +25,8 @@ module.exports = Backbone.Model.extend({
     },
 
     updateAlbums: function (albums) {
+        var _this = this;
+
         this.albums.reset(albums);
 
         if (!albums) {
