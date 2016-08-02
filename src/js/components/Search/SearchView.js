@@ -6,9 +6,9 @@ var api = require('../API/api')
 
 var SearchView = Backbone.View.extend({
 
-	 className: 'search',
+	className: 'search',
 
-		events: {
+	events: {
 		'click .search-button': 'handleSearchClick',
 		'keyup :input': 'logKey'
 	},
@@ -16,13 +16,6 @@ var SearchView = Backbone.View.extend({
 	initialize: function(options){
 		this.user = options.user;
         this.listenTo(this.user, 'change', this.render);
-	},
-
-	like: function(model) {
-		// POST: /users/:userId/albums
-		this.user.albums.create({
-			albumId: model.get('id')
-		});
 	},
 
 	render: function () {
@@ -34,6 +27,7 @@ var SearchView = Backbone.View.extend({
 		this.collection = new SearchCollection();
 		var parameters = {
 			q: $('#query').val(),
+			type: 'release'
 			// per_page: 100,
 			// page: 1
 		}
@@ -41,22 +35,21 @@ var SearchView = Backbone.View.extend({
 			{	
 				data: parameters,
 				success: (function(){
-					console.log(_this.collection);
 					_this.$('.search-results').empty();
-					var filtered = _this.collection.filter(function(model){
-						return model.get('type') !== 'artist';
-					});
-					console.log(filtered);
-					for(var i = 0; i <= 5; i++){
-						var album = filtered[i];
-						if(album){
-							var resultView = new ResultView({
-								model: album
-							});
-							resultView.searchView = _this;
-							resultView.render();
-							_this.$('.search-results').append(resultView.el);
-						}
+
+					// _this.collection.map(function(album){
+						
+					// })
+
+					for(var i = 0; i <= 11; i++){
+						var album = _this.collection.at(i);
+						var resultView = new ResultView({
+							model: album,
+							user: _this.user
+						});
+						resultView.searchView = _this;
+						resultView.render();
+						_this.$('.search-results').append(resultView.el);
 					}
 				})
 		});

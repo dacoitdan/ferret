@@ -1,37 +1,42 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 var AlbumModel = require('../Album/AlbumModel');
+var auth = require('../Auth/authController');
 
 var ResultView = Backbone.View.extend({
 
 	 className: 'result',
 
-	initialize: function(){
-		this.searchView = null;
-	},
-
 	events: {
 		'click .like': 'handleClick'
+	},
+
+	initialize: function () {
+		this.user = auth.userModel;
 	},
 
 	render : function () {
 		var _this = this;
 		this.thumbnail = this.model.get('thumb');
+		this.id = this.model.get('id');
 		this.$el.html(this.template({
-			thumbnail: _this.thumbnail
+			thumbnail: _this.thumbnail,
+			id: _this.id
 		}));
 	},
 
 	template: function (data) {
 		return `
-			<img src="${data.thumbnail}" class="result-image">
+			<a href = "#/release/${data.id}"><img src="${data.thumbnail}" class="result-image"></a>
 			<button class="like">Like</button>
 		`; 
 	},
 
 	handleClick: function(){
 		var _this = this;
-		this.searchView.like(_this.model);
+		this.user.albums.create({
+			albumId: _this.model.get('id')
+		});
 	}
 })
 

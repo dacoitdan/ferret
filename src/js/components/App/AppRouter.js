@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 
 var auth = require('../Auth/authController');
 var dashboard = require('../Dashboard/dashboardController');
+var release = require('../Release/releaseController');
 
 module.exports = Backbone.Router.extend({
 
@@ -11,7 +12,8 @@ module.exports = Backbone.Router.extend({
         'logout': 'logout',
         'register': 'register',
         'home': 'home',
-        'search': 'search'
+        'search': 'search',
+        'release/:id': 'release'
     },
 
     login: function () {
@@ -34,6 +36,11 @@ module.exports = Backbone.Router.extend({
     search: function(){
         auth.check()
         dashboard.showSearch();
+    },
+
+    release: function(id){
+        auth.check();
+        release.showRelease(id);
     }
 
 });
