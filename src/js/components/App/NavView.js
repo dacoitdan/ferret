@@ -14,6 +14,7 @@ module.exports = Backbone.View.extend({
 
     template: function () {
         return `
+            <div class="logo">Groove Ferret</div>
             <button class="searchnavbutton" onclick="location.href='#/search';">Explore</button>
             <button class="dashnavbutton" onclick="location.href='/';">Profile</button>
             <button class="logoutbutton" onclick="location.href='#/logout';">Log Out</button>

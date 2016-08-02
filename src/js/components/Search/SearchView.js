@@ -2,7 +2,6 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var SearchCollection = require('../Album/SearchCollection')
 var ResultView = require('./ResultView')
-var request = require('request');
 var api = require('../API/api')
 
 var SearchView = Backbone.View.extend({
@@ -78,7 +77,7 @@ var SearchView = Backbone.View.extend({
 	template: function(){
 		return `
 			<div>
-				<label for="query">Search</label>: <input type="text" class="search-input" id="query">
+				<input type="text" class="search-input" id="query">
 				<button class="search-button">Search</button>
 			</div>
 			<div class="search-results"></div>
