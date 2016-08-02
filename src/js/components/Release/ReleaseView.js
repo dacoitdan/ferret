@@ -12,16 +12,58 @@ var ReleaseView = Backbone.View.extend({
 	render : function () {
 		var _this = this;
 		this.thumbnail = this.model.get('thumb');
+		this.artist = '';
+		var artists = this.model.get('artists');
+		if(artists){
+			this.artist = artists[0].name;
+		}
+		this.album = this.model.get('title');
+		this.released = this.model.get('released');
+
+		var genres = this.model.get('genres');
+		var genre = '';
+		if(genres){
+			genre = genres[0];
+			for(var i = 1; i < genres.length; i++){
+				if(genres[i] === 'Folk, World, & Country'){
+					genre = genre + ', ' + 'Folk'
+				} else {
+					genre = genre + ', ' + genres[i];
+				}
+			}
+		}
+
+		var styles = this.model.get('styles');
+		var style = ''
+		if(styles){
+			var style = styles[0];
+			for(var i = 1; i < styles.length; i++){
+				style = style + ', ' + styles[i];
+			}
+		}
+
 		this.$el.html(this.template({
-			thumbnail: _this.thumbnail || ''
+			thumbnail: _this.thumbnail || '',
+			artist: _this.artist || '',
+			album: _this.album || '',
+			genre: genre || '',
+			style: style || '',
+			year: _this.released || ''
 		}));
 	},
 
 	template: function (data) {
 		return `
 			<img src="${data.thumbnail}" class="result-image">
+			<div>Artist: ${data.artist}</div>
+			<div>Album: ${data.album}</div>
+			<div>Genre: ${data.genre}</div>
+			<div>Style: ${data.style}</div>
+			<div>Year: ${data.year}</div>
 		`; 
 	},
 })
 
 module.exports = ReleaseView;
+
+		

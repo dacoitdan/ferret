@@ -5,7 +5,7 @@ var auth = require('../Auth/authController');
 
 var ResultView = Backbone.View.extend({
 
-	 className: 'result',
+	className: 'result',
 
 	events: {
 		'click .like': 'handleClick'

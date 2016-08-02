@@ -13,13 +13,14 @@ var DashAlbumView = Backbone.View.extend({
 		var _this = this;
 		this.thumbnail = this.model.discogsAlbum.get('thumb');
 		this.$el.html(this.template({
-			thumbnail: _this.thumbnail || ''
+			thumbnail: _this.thumbnail || '',
+			id: _this.model.get('albumId') || ''
 		}));
 	},
 
 	template: function (data) {
 		return `
-			<img src="${data.thumbnail}" class="result-image">
+			<a href = "#/release/${data.id}"><img src="${data.thumbnail}" class="result-image"></a>
 		`; 
 	},
 })
