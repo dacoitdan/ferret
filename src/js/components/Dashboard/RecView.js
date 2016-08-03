@@ -2,7 +2,7 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var SearchCollection = require('../Album/SearchCollection');
 var AlbumModel = require('../Album/AlbumModel');
-var ResultView = require('../Search/ResultView');
+var RecAlbumView = require('./RecAlbumView');
 
 var RecView = Backbone.View.extend({
 
@@ -28,7 +28,7 @@ var RecView = Backbone.View.extend({
 		}
 
 		this.childViews = this.results.shuffle().slice(0, 6).map(function (model) {
-			return new ResultView({ model: model });
+			return new RecAlbumView({ model: model });
 		});
 
 		this.childViews.forEach(function (view) {
