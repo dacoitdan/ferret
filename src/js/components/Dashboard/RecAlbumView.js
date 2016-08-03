@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 
 var RecAlbumView = Backbone.View.extend({
 
-	className: 'previewalbum',
+	className: 'recommendation',
 
 	initialize: function () {
 		this.model.on('sync', this.render.bind(this));
