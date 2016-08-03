@@ -1,0 +1,12 @@
+.dashboard {
+	margin-top: 100px; 
+	margin-left: 5%; 
+	margin-right: 5%; 
+}
+
+.previews {
+	display:flex; 
+	flex-direction: row;
+	align-items: stretch; 
+	flex-wrap: wrap; 
+}

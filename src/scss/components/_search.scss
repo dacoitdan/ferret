@@ -1,23 +1,77 @@
 .search {
-	padding-top: 40px; 
+	margin-top: 100px; 
+	padding-left:5%; 
+	padding-right:5%; 
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap; 
+	 
 }
 
-// .search-input {} 
-
 .search-input {
-	height: 20px; 
-	border-radius: 8px; 
-	border-color: $color-burgundy; 
+	height: 50px; 
+	border-radius: 23px; 
+	border-color: black; 
+	width: 100px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    background-image: url("../../images/vinyl-01.png"); 
+    background-size: 2.5em;
+	background-repeat: no-repeat; 
+	font-size: 24px;    
+
+  
+
+
+
+
+}
+
+.search-input:hover {
+	outline:0;
+	width: 260px;  
+	background-position: 100%; 
+	position: relative; 
+	
+
+}
+
+.search-input:focus {
+	outline:0;
+	width: 260px;  
+	background-position: 100%; 
+	position: relative; 
+
 }
 
 button.search-button {
 	background-color: $color-burgundy; 
-	height: 30px; 
+	height: 55.9px; 
 	margin-left: 0px; 
-	width: 70px; 
-	border-radius: 8px; 
+	border-bottom-left-radius:0px;
+	border-top-left-radius:0px;  
+	border-bottom-right-radius:20px; 
+	border-top-right-radius:20px;
+	position: relative; 
+	left: -75px; 
+	top: -3.5px; 
+	border-color: black;  
+	width:70px; 
+	border-style: solid; 
+	-webkit-transition-timing-function: cubic-bezier(-20,0,0,-1); 
+	
 }
 
 label {
 	display: none; 
+}
+
+.like {
+	background-image: url("../../images/ferretpawbutton-01.png"); 
+	font-size: 50px; 
+	background-position: 10% 30%; 
+	background-repeat: no-repeat; 
+	color: transparent;  
+	background-size: contain; 
 }

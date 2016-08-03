@@ -1,34 +1,101 @@
-.nav-region {
-
+.nav-region nav {
 	background-color: $color-burgundy;  
 	height: 70px; 
-
-	 
-}
-
-nav {
-	display: flex; 
+	display: flex;
 	justify-content: flex-end; 
-	// flex-flow: row wrap; 
 	flex-direction: row;
-	margin-bottom: 10px; 
-
+	width: 100%;
 }
+
+@media all and (max-width:444px) {
+	.nav-region {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	.nav-region nav {
+		display: flex; 
+		flex-direction: row; 
+		height: 60px; 
+		justify-content: center;
+		align-items: center;
+		background-color: grey; 
+	}
+	button.searchnavbutton {
+		background-image: url("../../images/search-01.png"); 
+		font-size: 25px; 
+		background-color: transparent; 
+		background-repeat: no-repeat; 
+		width: 50px; 
+		margin:0; 
+		color: transparent;  
+
+		border: none; 
+		padding: 0px; 
+	}
+	button.dashnavbutton {
+		background-image: url("../../images/profileicon-01.png"); 
+		font-size: 25px; 
+		background-size: 5em; 
+		background-position: 10px 20px; 
+		background-color: transparent; 
+		background-repeat: no-repeat; 
+		height: 20px; 
+		width:20px; 
+		margin:0; 
+		color: transparent; 
+		border: none; 
+		padding-left: 0px; 
+	}
+	button.logoutbutton {
+		background-image: url("../../images/logout-01.png"); 
+			font-size: 25px; 
+		background-size: 1.5em; 
+		background-position: 10% 60%; 
+		background-color: transparent; 
+		background-repeat: no-repeat; 
+		width: 70px; 
+		margin:0; 
+		color: transparent;  
+
+		border: none; 
+		padding: 0px; 
+	}
+
+
+
+	div.logo {
+		background-image: url("../../images/ferretnav-01.svg");
+		background-size: 5em; 
+		background-repeat: no-repeat; 
+		position: fixed; 
+		left: 0px; 
+		top: 0px; 
+		font-family: Miniver; 
+		// text-align: center; 
+		color: white; 
+		background-color: $color-burgundy; 
+		width: 100%;
+		margin: 0; 
+		left: 0;  
+		height: 40px; 
+		padding-left:40px; 
+
+	}
+		div.logo:hover {
+		color: white; 
+		text-indent: 60px; 
+		text-transform: lowercase; 
+	}
+}
+
 
 @media all and (max-width:800px) {
 		.nav {
 		justify-content: space-around; 
 	}
 }
-
-// @media all and (max-width:500px) {
-// 	.nav {
-// 		height: 400px; 
-// 		justify-content: space-around; 
-// 		flex-direction: row; 
-// 		align-items: flex-start; 
-// 	}
-// }
 
 button {
 	border-style: none; 
@@ -40,7 +107,12 @@ button {
     background-position: -10px -70px; 
     font-size: 16px; 
 
+
 }
+
+  button:focus {
+  	outline:0;
+  }
 
 nav button, button.searchnavbutton {
 	position: relative;
@@ -62,9 +134,6 @@ nav button:before, button.searchnavbutton:before {
 
 nav button:hover:before, button.searchnavbutton:hover:before {
 	top: -55%;
-	// background-position: 0px -40px;  
-	// color: pink;
-	// font-size: 16px;
 }
 
 button.searchnavbutton {
@@ -80,37 +149,26 @@ button.searchnavbutton {
 	
 	border: none; 
 	padding-left: 16px; 
-
-
 }
 
 button.dashnavbutton {
+	@extend button.searchnavbutton; 
 	order: 3; 
 	background-image: url("../../images/profileicon-01.png"); 
-	background-size: 2.1em;
-	background-position: 15px 20px; 
-	background-color: transparent; 
-	background-repeat: no-repeat; 
-	height: 75px; 
-	width:130px; 
-	margin:0; 
-
-	
-	border: none; 
-	padding-left: 16px; 
 }
+
 button.logoutbutton {
 	order: 4; 
 }
 
 div.logo {
-	background-image: url("../../images/ferretdashboard-01.png");
-	background-size: 5em; 
+	background-image: url("../../images/ferretnav-01.svg");
+	background-size: 4em; 
 	background-repeat: no-repeat; 
 	position: fixed; 
-	left: 10px; 
+	left: 0px; 
 	top: 0px; 
-	height: 70px;
+	height: 60px;
 	font-family: Miniver; 
 	text-align: center; 
 	color: transparent; 
@@ -120,6 +178,26 @@ div.logo:hover {
 	color: white; 
 	text-indent: 80px; 
 	text-transform: lowercase; 
-// 	line-height: 20px; 
-// 	font-size: 20px; 
+}
+
+@media all and (max-width:444px) {
+	nav button:before, button.searchnavbutton:before {
+		width: 5em;
+		height: 5em;
+		background-image: url("../../images/vinyl-01.png"); 
+		background-size: 0px;
+		background-repeat: no-repeat; 
+		content: '';
+		position: absolute;
+		top: -100%;
+		left: 15%; 
+		transition: top 200ms ease;
+	}
+
+	nav button:hover:before, button.searchnavbutton:hover:before {
+		top: -55%;
+		background-size: 0px; 
+		
+	}
+
 }
