@@ -37,10 +37,6 @@ var SearchView = Backbone.View.extend({
 				success: (function(){
 					_this.$('.search-results').empty();
 
-					// _this.collection.map(function(album){
-						
-					// })
-
 					for(var i = 0; i <= 11; i++){
 						var album = _this.collection.at(i);
 						var resultView = new ResultView({
