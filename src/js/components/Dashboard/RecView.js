@@ -53,11 +53,13 @@ var RecView = Backbone.View.extend({
 		var _this = this;
 
 		this.collection.each(function(model){
-			var style = model.discogsAlbum.get('styles')[0];
-			if(table[style]){
-				table[style]++;
-			} else {
-				table[style] = 1;
+			var style = model.discogsAlbum.get('styles');
+			for(var i = 0; i < style.length; i++){
+				if(table[style[i]]){
+					table[style[i]]++;
+				} else {
+					table[style[i]] = 1;
+				}
 			}
 		});
 
@@ -70,6 +72,7 @@ var RecView = Backbone.View.extend({
 		}
 
 		var styles = Object.keys(table);
+		console.log(styles.length);
 
 		styles.forEach(function (style) {
 			var found = 0;
