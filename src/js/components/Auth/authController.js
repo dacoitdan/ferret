@@ -16,7 +16,7 @@ module.exports = window.auth = {
         this.userModel.check(function success() {
 
         }, function error() {
-            Backbone.history.navigate('login', { trigger: true });
+            Backbone.history.navigate('register', { trigger: true });
         });
     },
 

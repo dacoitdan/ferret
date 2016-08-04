@@ -13,13 +13,19 @@
 	height: 50px; 
 	border-radius: 23px; 
 	border-color: black; 
-	width: 100px;
+	width: 200px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     background-image: url("../../images/vinyl-01.png"); 
     background-size: 2.5em;
 	background-repeat: no-repeat; 
 	font-size: 24px;    
+	animation-name: move; 
+	animation-duration: 700ms; 
+	animation-play-state: paused;
+	animation-fill-mode: forwards; 
+	animation-timing-function: linear; 
+
 
   
 
@@ -28,22 +34,35 @@
 
 }
 
+@keyframes move {
+	0% { width: 100px; }
+	25% { width: 160px; }
+	75% { width: 220px; }
+	100% { width: 260px; }
+}
+
 .search-input:hover {
-	outline:0;
-	width: 260px;  
-	background-position: 100%; 
-	position: relative; 
+	animation-play-state: running; 
+
+}
+// .search-input:focus,.search-input:active 
+	// outline:0;
+	// width: 260px;  
+	// background-position: 100%; 
+	// position: relative; 
+	// animation-fill-mode: forwards;
+ //    animation-play-state: paused;
 	
 
-}
 
-.search-input:focus {
-	outline:0;
-	width: 260px;  
-	background-position: 100%; 
-	position: relative; 
 
-}
+// .search-input:focus {
+// 	outline:0;
+// 	width: 260px;  
+// 	background-position: 100%; 
+// 	position: relative; 
+
+// }
 
 button.search-button {
 	background-color: $color-burgundy; 
@@ -61,10 +80,6 @@ button.search-button {
 	border-style: solid; 
 	-webkit-transition-timing-function: cubic-bezier(-20,0,0,-1); 
 	
-}
-
-label {
-	display: none; 
 }
 
 .like {

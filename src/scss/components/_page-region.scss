@@ -1,1 +1,11 @@
+.page-region {
+	height: 90vh;
+	display: flex;
+	min-height: min-content;
+}
 
+@media all and (max-width: 650px) {
+	.page-region {
+		padding-top: 10vh;
+	}
+}

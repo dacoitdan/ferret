@@ -1,0 +1,54 @@
+.register {
+	font-family: $montserrat;
+	display:flex;
+	justify-content: center;
+	background-color: $color-burgundy;
+	flex-wrap: wrap;
+	flex: 1;
+}
+
+.ferret {
+	background-image: url("../../images/ferretlogo-01.png");
+	background-size: 100%;
+	flex: 1 0 200px;
+	font-size: 16px;
+	background-repeat: no-repeat;
+	z-index: 30;
+	max-width: 400px;
+	background-size: contain;
+	background-position: center;
+}
+
+.dig {
+	color: white;
+	z-index: 1;
+	font-size: 26px;                                   
+}
+
+.deeper {
+	z-index: 2;
+	color: white;
+	font-size: 24px;
+}
+
+h3 {
+	background-color: brown;
+	color: white;
+	width: 150px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 7px;
+}
+
+
+.register-button {
+}
+
+.already {
+	color: white;
+	margin-top: 2em;
+}
+
+.log-child {
+	color: #eee;
+}

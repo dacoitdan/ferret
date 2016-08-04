@@ -16,13 +16,14 @@ module.exports = Backbone.View.extend({
 
     template: function () {
         return `
-            <h3>Login</h3>
-            <label for="username">Username</label>
-            <input id="username" type="text" name="username">
-            <label for="password">Password</label>
-            <input id="password" type="text" name="password">
-            <button class="login-button">Login</button>
-            <a href="#/register">Register</a>
+            <div class="form">
+                <h3>Login</h3>
+                <input id="username" type="text" name="username" placeholder="Username">
+                <input id="password" type="password" name="password" placeholder="Password">
+                <button class="login-button">Login</button>
+                <div class="already">Not digging with the ferret?</div>
+                <a href="#/register" class="log-child">Register</a>
+            </div>
         `;
     },
 

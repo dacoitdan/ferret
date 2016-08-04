@@ -6,4 +6,12 @@
 @import 'components/nav-region'; 
 @import 'components/page-region'; 
 @import 'components/search'; 
-@import 'components/login'; 
+@import 'components/login';
+@import 'components/form'; 
+@import 'components/register'; 
+@import 'https://fonts.googleapis.com/css?family=Miniver';
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Raleway:700';
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}

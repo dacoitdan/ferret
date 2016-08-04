@@ -1,203 +1,107 @@
-.nav-region nav {
-	background-color: $color-burgundy;  
-	height: 70px; 
+.nav-region {
 	display: flex;
-	justify-content: flex-end; 
-	flex-direction: row;
 	width: 100%;
+	height: 10vh;
+	background-color: $color-burgundy;
+	z-index: 99;
+	position: relative;
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: row;
+		width: 100%;
+		z-index: 5;
+	}
+
+	a {
+		line-height: 10vh;
+		padding-left: 1.8em;
+		margin-right: 2em;
+		background-position: 0 1.5em;
+		background-size: 1.5em;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		border: none;
+		color: white;
+		position: relative;
+		text-decoration: none;
+	}
+
+	a:before {
+		width: 5em;
+		height: 5em;
+		background-image: url("../../images/vinyl-01.png");
+		background-size: 5em;
+		background-repeat: no-repeat;
+		content: '';
+		position: absolute;
+		top: -100%;
+		left: 15%;
+		transition: top 200ms ease;
+	}
+
+	a:hover:before {
+		top: -55%;
+	}
+
+	a.searchnavbutton {
+		background-image: url("../../images/search-01.png");
+	}
+
+	a.dashnavbutton {
+		background-image: url("../../images/profileicon-01.png");
+	}
+
+	a.logoutbutton {
+		background-image: url("../../images/logout-01.png");
+		background-size: 1.2em;
+	}
+
+	a:focus {
+		outline: 0;
+	}
+
+	.df {
+		flex: 1 0 auto;
+		color: white;
+		margin-left: 1em;
+		font-family: $miniver; 
+	}
 }
 
-@media all and (max-width:444px) {
+@media all and (max-width: 650px) {
 	.nav-region {
+
 		position: fixed;
-		bottom: 0;
-		width: 100%;
+		top: 0;
+
+		nav {
+			position: fixed;
+			bottom: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			background-color: grey;
+		}
+
+		.df {
+			position: absolute;
+			top: 0.67em;
+			left: 1em;
+			margin: 0;
+		}
 	}
 
-	.nav-region nav {
-		display: flex; 
-		flex-direction: row; 
-		height: 60px; 
-		justify-content: center;
-		align-items: center;
-		background-color: grey; 
-	}
-	button.searchnavbutton {
-		background-image: url("../../images/search-01.png"); 
-		font-size: 25px; 
-		background-color: transparent; 
-		background-repeat: no-repeat; 
-		width: 50px; 
-		margin:0; 
-		color: transparent;  
-
-		border: none; 
-		padding: 0px; 
-	}
-	button.dashnavbutton {
-		background-image: url("../../images/profileicon-01.png"); 
-		font-size: 25px; 
-		background-size: 5em; 
-		background-position: 10px 20px; 
-		background-color: transparent; 
-		background-repeat: no-repeat; 
-		height: 20px; 
-		width:20px; 
-		margin:0; 
-		color: transparent; 
-		border: none; 
-		padding-left: 0px; 
-	}
-	button.logoutbutton {
-		background-image: url("../../images/logout-01.png"); 
-			font-size: 25px; 
-		background-size: 1.5em; 
-		background-position: 10% 60%; 
-		background-color: transparent; 
-		background-repeat: no-repeat; 
-		width: 70px; 
-		margin:0; 
-		color: transparent;  
-
-		border: none; 
-		padding: 0px; 
-	}
-
-
-
-	div.logo {
-		background-image: url("../../images/ferretnav-01.svg");
-		background-size: 5em; 
-		background-repeat: no-repeat; 
-		position: fixed; 
-		left: 0px; 
-		top: 0px; 
-		font-family: Miniver; 
-		// text-align: center; 
-		color: white; 
-		background-color: $color-burgundy; 
-		width: 100%;
-		margin: 0; 
-		left: 0;  
-		height: 40px; 
-		padding-left:40px; 
-
-	}
-		div.logo:hover {
-		color: white; 
-		text-indent: 60px; 
-		text-transform: lowercase; 
+	nav a:before {
+		display: none;
 	}
 }
 
 
 @media all and (max-width:800px) {
-		.nav {
-		justify-content: space-around; 
+	.nav {
+		justify-content: space-around;
 	}
-}
-
-button {
-	border-style: none; 
-	background-color: transparent; 
-	font-family: Proxima Nova; 
-	color: white; 
-	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    background-position: -10px -70px; 
-    font-size: 16px; 
-
-
-}
-
-  button:focus {
-  	outline:0;
-  }
-
-nav button, button.searchnavbutton {
-	position: relative;
-}
-
-nav button:before, button.searchnavbutton:before {
-	width: 5em;
-	height: 5em;
-	background-image: url("../../images/vinyl-01.png"); 
-	background-size: 5em;
-	background-repeat: no-repeat; 
-	content: '';
-	position: absolute;
-	top: -100%;
-	left: 15%; 
-	transition: top 200ms ease;
-
-}
-
-nav button:hover:before, button.searchnavbutton:hover:before {
-	top: -55%;
-}
-
-button.searchnavbutton {
-	order: 2; 
-	background-image: url("../../images/search-01.png"); 
-	background-size: 2.1em;
-	background-position: 10px 20px; 
-	background-color: transparent; 
-	background-repeat: no-repeat; 
-	height: 75px; 
-	width:130px; 
-	margin:0; 
-	
-	border: none; 
-	padding-left: 16px; 
-}
-
-button.dashnavbutton {
-	@extend button.searchnavbutton; 
-	order: 3; 
-	background-image: url("../../images/profileicon-01.png"); 
-}
-
-button.logoutbutton {
-	order: 4; 
-}
-
-div.logo {
-	background-image: url("../../images/ferretnav-01.svg");
-	background-size: 4em; 
-	background-repeat: no-repeat; 
-	position: fixed; 
-	left: 0px; 
-	top: 0px; 
-	height: 60px;
-	font-family: Miniver; 
-	text-align: center; 
-	color: transparent; 
-}
-
-div.logo:hover {
-	color: white; 
-	text-indent: 80px; 
-	text-transform: lowercase; 
-}
-
-@media all and (max-width:444px) {
-	nav button:before, button.searchnavbutton:before {
-		width: 5em;
-		height: 5em;
-		background-image: url("../../images/vinyl-01.png"); 
-		background-size: 0px;
-		background-repeat: no-repeat; 
-		content: '';
-		position: absolute;
-		top: -100%;
-		left: 15%; 
-		transition: top 200ms ease;
-	}
-
-	nav button:hover:before, button.searchnavbutton:hover:before {
-		top: -55%;
-		background-size: 0px; 
-		
-	}
-
 }

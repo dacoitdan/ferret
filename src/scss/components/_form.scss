@@ -1,0 +1,16 @@
+.form {
+	padding: 0 3em;
+	flex: 1;
+
+	button,
+	input {
+		margin: 0.25em 0;
+		padding: 0.5em;
+	}
+
+	input {
+		width: 100%;
+		display: block;
+		max-width: 300px;
+	}
+}

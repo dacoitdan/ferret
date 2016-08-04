@@ -20,7 +20,9 @@ module.exports = Backbone.View.extend({
 
     template: function () {
         return `
-            <div class="nav-region"></div>
+            <div class="nav-region">
+                <h1 class="df">disco ferret</h1>
+            </div>
             <div class="page-region"></div>
         `;
     },
