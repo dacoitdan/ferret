@@ -1,12 +1,25 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
+var auth = require('../Auth/authController');
 
 var ReleaseView = Backbone.View.extend({
 
 	className: 'releasedetails',
 
+	events: {
+		'click .likealbum': 'like',
+	},
+
 	initialize: function () {
+		this.user = auth.userModel;
 		this.listenTo(this.model, 'sync', this.render.bind(this));
+	},
+
+	like: function(){
+		var _this = this;
+		this.user.albums.create({
+			albumId: _this.model.get('id')
+		});
 	},
 
 	render : function () {
@@ -60,6 +73,7 @@ var ReleaseView = Backbone.View.extend({
 			<div>Genre: ${data.genre}</div>
 			<div>Style: ${data.style}</div>
 			<div>Year: ${data.year}</div>
+			<button class="likealbum">Like</button>
 		`; 
 	},
 })

@@ -2,13 +2,14 @@ var Backbone = require('backbone');
 var DashboardCollectionPreview = require('./DashboardCollectionPreview')
 var DashAlbumView = require('./DashAlbumView');
 var RecView = require('./RecView');
+var auth = require('../Auth/authController');
 
 module.exports = Backbone.View.extend({
 
     className: 'dashboard',
 
     initialize: function (options) {
-        this.user = options.user;
+        this.user = auth.userModel;
         this.listenTo(this.user, 'change', this.render);
     },
 

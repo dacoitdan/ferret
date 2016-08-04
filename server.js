@@ -131,7 +131,8 @@ app.post('/users', function (req, res) {
     var user = {
         id: uuid(),
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        albums: req.body.albums || []
     };
 
     db.get('users')
