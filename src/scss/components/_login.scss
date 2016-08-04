@@ -1,6 +1,8 @@
 .login {
 	flex: 1;
 	background-color: $color-burgundy;
+	display: flex; 
+	align-items: center; 
 }
 
 button.login-button {
@@ -18,3 +20,10 @@ button.login-button:hover {
     background-color: $color-burgundy;
     color: pink;
 }
+
+// @media all and (max-width: 650px) {
+// 	.login {
+// 		padding-left:5%;
+// 		align-content: center; 
+// 	}
+// }
