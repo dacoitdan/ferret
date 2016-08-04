@@ -39,7 +39,7 @@ var RecView = Backbone.View.extend({
 
 	template: function () {
 		return `
-			<button class="recommend">HIT ME</button>
+			<button class="recommend">Fetch Recommendations</button>
 			<div class="rec-results"></div>
 		`; 
 	},
