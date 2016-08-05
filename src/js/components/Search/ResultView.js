@@ -36,6 +36,11 @@ var ResultView = Backbone.View.extend({
 		var _this = this;
 		this.user.albums.create({
 			albumId: _this.model.get('id')
+		},
+		{
+			error: function(){
+				alert('You\'ve already liked this album!');
+			}
 		});
 	}
 })

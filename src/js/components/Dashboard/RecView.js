@@ -54,6 +54,9 @@ var RecView = Backbone.View.extend({
 
 		this.collection.each(function(model){
 			var style = model.discogsAlbum.get('styles');
+			if (!style) {
+				return;
+			}
 			for(var i = 0; i < style.length; i++){
 				if(table[style[i]]){
 					table[style[i]]++;

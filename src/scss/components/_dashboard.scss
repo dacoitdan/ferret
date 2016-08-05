@@ -46,20 +46,21 @@
 .rec-results {
 	display: flex;
 	flex-direction: row; 
-	width: 80%;  
 	overflow: scroll; 
 
 }
 
 button.recommend {
-	color: transparent; 
-	background-color: transparent; 
+	margin-top: 1em;
+	// color: transparent; 
+	// background-color: transparent;
+	cursor: pointer;
 	border-style: none; 
 	border-color: none; 
 	// background-image: url("../../images/dig-01.png");
 	background-size: 4em; 
 	background-repeat: no-repeat; 
-	height: 70px; 
+	height: 50px; 
 	// position: absolute; 
 	// top: -170px; 
 	// right:-60px; 
@@ -72,6 +73,9 @@ button.recommend {
 
 }
 
+.previews {
+	padding-bottom: 1em;
+}
 
 button.recommend:hover {
 	background-color: red; opacity: 0.5; 

@@ -17,6 +17,12 @@ var DashboardCollectionPreview = Backbone.View.extend({
 		
 		this.$el.html(this.template());
 
+		if(this.collection.length === 0){
+			var div = $('<div/>');
+			div.text('Add some Albums!');
+			this.$('.previews').append(div);
+		}
+
 		var previews = this.collection.slice(0, 6).map(function (model) {
 			return new DashAlbumView({ model: model });
 		});

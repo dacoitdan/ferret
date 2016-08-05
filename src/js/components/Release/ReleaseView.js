@@ -17,8 +17,14 @@ var ReleaseView = Backbone.View.extend({
 
 	like: function(){
 		var _this = this;
+		console.log(this.model);
 		this.user.albums.create({
 			albumId: _this.model.get('id')
+		},
+		{
+			error: function(){
+				alert('You\'ve already liked this album!');
+			}
 		});
 	},
 

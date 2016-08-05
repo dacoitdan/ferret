@@ -13,7 +13,7 @@ module.exports = window.auth = {
     check: function () {
         var _this = this;
 
-        this.userModel.check(function success() {
+        this.userModel.check(function success () {
 
         }, function error() {
             Backbone.history.navigate('register', { trigger: true });
@@ -34,6 +34,7 @@ module.exports = window.auth = {
     },
 
     logout: function () {
+        var _this = this;
         $.ajax('/auth/login', {
             method: 'DELETE',
             success: function () {

@@ -38,7 +38,8 @@ module.exports = Backbone.View.extend({
         return `
             <h3>${data.username}'s Library</h3>
             <div class="collection"></div>
-            <div class="rec-region">Dig for more</div>
+            <h3>Dig for more</h3>
+            <div class="rec-region"></div>
         `;
     },
 

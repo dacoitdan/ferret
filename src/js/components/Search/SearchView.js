@@ -65,6 +65,7 @@ var SearchView = Backbone.View.extend({
 
 	template: function(){
 		return `
+			<h1>Search</h1>
 			<div>
 				<input type="text" class="search-input" id="query">
 				<button class="search-button">Search</button>
