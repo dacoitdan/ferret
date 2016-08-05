@@ -1,12 +1,82 @@
 .dashboard {
-	margin-top: 20px; 
-	margin-left: 5%; 
-	margin-right: 5%; 
+	font-family: $raleway; 
+	font-size: 16px;
+	display: flex; 
+	flex-direction: column; 
+	width: 80%; 
+	align-content: flex-end; 
+
+	// justify-content: center; 
+	// flex-wrap: wrap;  
+
+}
+
+.collection {
+	// display: flex; 
+	// flex-direction: row; 
+	// align-items: flex-start; 
+	// height: 300px; 
+	// overflow-y: scroll; 
+	// overflow-x: scroll; 
+	// width: 600px;  
+	display:flex; 
+	flex-direction: row; 
+	// flex-wrap: wrap; 
+	overflow: auto; 
+	width: 100%; 
+	
+
+
 }
 
 .previews {
 	display:flex; 
 	flex-direction: row;
-	align-items: stretch; 
-	flex-wrap: wrap; 
+	// align-items: stretch; 
+	// flex-wrap: wrap; 
+}
+
+.dashboard>h3 {
+	display:block;
+	align: 0 auto; 
+	
+}
+
+
+.rec-results {
+	display: flex;
+	flex-direction: row; 
+	width: 80%;  
+	overflow: scroll; 
+
+}
+
+button.recommend {
+	color: transparent; 
+	background-color: transparent; 
+	border-style: none; 
+	border-color: none; 
+	// background-image: url("../../images/dig-01.png");
+	background-size: 4em; 
+	background-repeat: no-repeat; 
+	height: 70px; 
+	// position: absolute; 
+	// top: -170px; 
+	// right:-60px; 
+
+}
+
+.recommendations {
+	position: relative; 
+	width: inherit; 
+
+}
+
+
+button.recommend:hover {
+	background-color: red; opacity: 0.5; 
+}
+
+button.recommend:focus {
+	background-size: 0em; 
 }

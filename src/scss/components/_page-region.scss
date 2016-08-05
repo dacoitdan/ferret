@@ -2,6 +2,9 @@
 	height: 90vh;
 	display: flex;
 	min-height: min-content;
+	flex-wrap: wrap;  
+	justify-content: center; 
+	align-content: center; 
 }
 
 @media all and (max-width: 650px) {
@@ -9,3 +12,74 @@
 		padding-top: 10vh;
 	}
 }
+
+button.likealbum {
+	background-image: url("../../images/ferretpawbutton-01.png"); 
+	font-size: 50px; 
+	background-position: 10% 30%; 
+	background-repeat: no-repeat; 
+	background-color: transparent;  
+	background-size: contain; 
+	border-style: none; 
+	border-color: transparent; 
+	color: transparent; 
+	height:60px; 
+	transform: rotate(-90deg); 
+	width: 60px; 
+	padding-right:30px; 
+	
+	
+
+
+}
+
+.releasedetails {
+	font-family: sans-serif; 
+	text-emphasis: before; 
+	line-height: 2em; 
+	display: flex; 
+	flex-direction: column; 
+	align-content: center; 
+	padding-top: 100px; 
+	padding-left:200px; 
+	color: $color-burgundy; 
+	
+
+	// box-orient: horizontal; 
+	
+}
+
+.releasedetails>img {
+	order: 1; 
+	width: 100%; 
+	position: relative; 
+	bottom: 240px; 
+	right:300px; 
+	padding-left: 100px; 
+}
+
+@media all and (max-width: 715px) {
+
+			.releasedetails>img {
+			order: 0; 
+			// width: 100%; 
+			position: static; 
+			// bottom: 240px; 
+			// right:300px; 
+			// padding-left: 100px; 
+		}
+
+		.releasedetails {
+		padding:30px; 
+		margin-bottom: 30px;
+
+	}
+}
+
+@media all and (max-width: 370px) {
+  
+	.releasedetails { 
+          line-height: 1em; 
+      }
+ }
+

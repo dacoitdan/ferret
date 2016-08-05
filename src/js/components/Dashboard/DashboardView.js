@@ -36,13 +36,9 @@ module.exports = Backbone.View.extend({
 
     template: function (data) {
         return `
-            <h3>Dashboard</h3>
-            <div>Welcome, ${data.username}.</div>
-            <div>Your Collection:</div>
+            <h3>${data.username}'s Library</h3>
             <div class="collection"></div>
-            <div>Recommendations!</div>
-            <div class="rec-region"></div>
-            <a href="#/logout">Logout</a>
+            <div class="rec-region">Dig for more</div>
         `;
     },
 
